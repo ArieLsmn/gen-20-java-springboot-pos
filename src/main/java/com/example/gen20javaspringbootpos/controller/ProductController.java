@@ -1,19 +1,20 @@
 package com.example.gen20javaspringbootpos.controller;
 
 import com.example.gen20javaspringbootpos.model.Product;
+import com.example.gen20javaspringbootpos.model.ResponseInsert;
 import com.example.gen20javaspringbootpos.service.ProductImplementation;
 import com.example.gen20javaspringbootpos.service.ProductRepository;
 import com.example.gen20javaspringbootpos.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @ComponentScan({"com.gen-20-java-springboot-pos."})
 @RequestMapping(path="api")
@@ -26,29 +27,31 @@ public class ProductController{
     @Autowired
     private ProductRepository productRepo;
 
-    //@GetMapping("/helloworld")
-    //public String helloWorld(){
-    //    return productService.helloWorld();
-    //}
-
-    //@GetMapping("/product")
-    //public String getProduct(@RequestParam Integer id){
-    //    return productService.getProduct(id);
-    //}
-
-    @GetMapping("/list")
-    public List<Product> getProduct(){
-        return productService.getProduct();
-    }
-    @GetMapping("/id")
-    public Product findById(int id){
+    @PostMapping("/productid")
+    public Optional<Product> findById(int id){
         return productService.findById(id);
     }
-    @GetMapping("/prod")
-    public List<Product> fetchProdList() { return productService.fetchProdList();
-        //return productRepo.findAll();
+
+    //method API Select
+    @PostMapping("/allproduct")
+    public List<Product> fetchProdList() {
+        return productService.fetchProdList();
         }
 
-    @GetMapping("/test")
-    public String test() { return "test ok"; }
+    //@GetMapping("/test")
+    //public String test() { return "test ok"; }
+
+
+    @PostMapping("/findcat")
+    public List<Product> findCat(int catId) { return productService.findByCategoryId(catId); }
+
+    //method API insert
+    @PostMapping("/insert")
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public ResponseInsert insertProduct(@RequestBody Product pr) {
+        productService.insertProduct(pr);
+        return new ResponseInsert(HttpStatus.OK.value(),"Berhasil Insert");
+    }
+
 }

@@ -2,10 +2,9 @@ package com.example.gen20javaspringbootpos.service;
 
 
 import com.example.gen20javaspringbootpos.model.Product;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductImplementation {
 
@@ -16,7 +15,8 @@ public interface ProductImplementation {
     List<Product> fetchProdList();
 
     //@Query("select * from Product where id = prodId")
-    Product findById(/*@Param("prodId")*/ int id);
+    Optional<Product> findById(/*@Param("prodId")*/ int id);
+
 
 }
 
