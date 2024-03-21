@@ -23,8 +23,6 @@ public class CategoryController{
     @Autowired
     @Qualifier("categoryService")
     private CategoryService categoryService;
-    @Autowired
-    private CategoryRepository catRepo;
 
     @PostMapping("/categoryid")
     public Optional<Category> findById(int id){
