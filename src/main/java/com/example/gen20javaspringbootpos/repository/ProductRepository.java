@@ -1,6 +1,6 @@
-package com.example.gen20javaspringbootpos.service;
+package com.example.gen20javaspringbootpos.repository;
 
-import com.example.gen20javaspringbootpos.model.Product;
+import com.example.gen20javaspringbootpos.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,5 +10,6 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     public List<Product> findByCategoryId(int categoryId);
+
 
 }
