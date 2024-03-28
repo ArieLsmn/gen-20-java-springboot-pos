@@ -1,10 +1,10 @@
 package com.example.gen20javaspringbootpos.model;
 
-public class ResponseInsert {
+public class ResponseFormat {
     int status;
     String msg;
 
-    public ResponseInsert(int status, String msg) {
+    public ResponseFormat(int status, String msg) {
         this.status = status;
         this.msg = msg;
     }

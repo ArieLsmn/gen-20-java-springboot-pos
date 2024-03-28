@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(scanBasePackages = {"com.example.gen20javaspringbootpos"})
-@ComponentScan(basePackageClasses = {ProductController.class, CategoryController.class, TransactionController.class})
+@SpringBootApplication
+//@ComponentScan(basePackageClasses = {ProductController.class, CategoryController.class, TransactionController.class})
 public class Gen20JavaSpringbootPosApplication{
 
 	public static void main(String[] args) {

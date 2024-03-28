@@ -23,28 +23,32 @@ public class CustomerService {
 
     }
 
-    //@Override
     public Optional<Customer> findById(int id){
 
         return custRepo.findById(id);
     }
 
-    //@Override
     public List<Customer> fetchCustList() {
         return custRepo.fetchCustomerAccount();
     }
 
-    public List<Customer> fetchCustList(int id) {
-        return custRepo.fetchCustomerAccount(id);
+    public List<Customer> fetchCustListJpq() {
+        return custRepo.fetchCustomerAccountJpq();
     }
 
-    public void insertCustomer(Customer c) {
-        custRepo.save(c);
+    public List<Customer> fetchCustList(int id) {
+        return custRepo.fetchCustomerAccountJpq(id);
     }
+
+    //public void insertCustomer(Customer c) {
+    //    custRepo.save(c);
+    //}
 
     public void insertCustomer(int id,String name,String email,String mobileNumber){custRepo.addCustomerAccount(id,name,email,mobileNumber);}
 
-    public void deleteProduct(int id){ custRepo.deleteById(id);}
+    public void insertCustomerJpq(int id,String name,String email,String mobileNumber){custRepo.addCustomerAccountJpq(id,name,email,mobileNumber);}
+
+    public void deleteCustomer(int id){ custRepo.deleteById(id);}
 
 
 }
