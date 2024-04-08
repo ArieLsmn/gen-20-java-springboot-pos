@@ -7,6 +7,6 @@ import jakarta.persistence.Id;
 public class Transaction {
     @Id
     int invoice_id;
-    String name;
+    int product_id;
     int quantity;
 }

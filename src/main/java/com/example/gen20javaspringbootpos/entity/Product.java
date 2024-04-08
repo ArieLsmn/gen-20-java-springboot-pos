@@ -3,15 +3,17 @@ package com.example.gen20javaspringbootpos.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Entity(name = "Product")
 @Table(name = "product", schema = "pos")
-public class Product {
+public class Product implements Serializable {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     private int id;
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "price")
     private int price;

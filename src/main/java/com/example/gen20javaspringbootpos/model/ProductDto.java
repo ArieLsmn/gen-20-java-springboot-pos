@@ -3,11 +3,13 @@ package com.example.gen20javaspringbootpos.model;
 import com.example.gen20javaspringbootpos.entity.Category;
 import com.example.gen20javaspringbootpos.entity.Product;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
 
+@Data
 @Setter
 @Getter
 public class ProductDto {

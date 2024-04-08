@@ -1,4 +1,4 @@
-package com.example.gen20javaspringbootpos.controller.config;
+package com.example.gen20javaspringbootpos.config;
 
 import com.example.gen20javaspringbootpos.repository.UserRepository;
 import com.example.gen20javaspringbootpos.service.LoginService;

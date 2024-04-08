@@ -15,10 +15,10 @@ public class LoginController {
 
     private final LoginService authServ;
 
-    @GetMapping("/test")
-    public ResponseEntity<String> test(){
-        return ResponseEntity.ok("Test OK");
-    }
+    //@GetMapping("/test")
+    //public ResponseEntity<String> test(){
+    //    return ResponseEntity.ok("Test OK");
+    //}
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest req){

@@ -1,6 +1,5 @@
 package com.example.gen20javaspringbootpos.service;
 
-import com.example.gen20javaspringbootpos.controller.config.JwtAuthFilter;
 import com.example.gen20javaspringbootpos.entity.Role;
 import com.example.gen20javaspringbootpos.entity.User;
 import com.example.gen20javaspringbootpos.model.AuthenticationRequest;
@@ -8,14 +7,10 @@ import com.example.gen20javaspringbootpos.model.AuthenticationResponse;
 import com.example.gen20javaspringbootpos.model.RegisterRequest;
 import com.example.gen20javaspringbootpos.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

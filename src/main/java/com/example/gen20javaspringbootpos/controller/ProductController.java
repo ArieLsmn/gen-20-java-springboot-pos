@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@ComponentScan({"com.gen-20-java-springboot-pos."})
+//@ComponentScan({"com.gen-20-java-springboot-pos."})
 @RequestMapping(path="api/production")
 @RestController
 public class ProductController{

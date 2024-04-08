@@ -1,4 +1,4 @@
-package com.example.gen20javaspringbootpos.controller.config;
+package com.example.gen20javaspringbootpos.config;
 
 
 import lombok.RequiredArgsConstructor;
@@ -24,7 +24,7 @@ public class SecurityConfig {
         http.csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**")
+                .requestMatchers("/api/v1/auth/**","/api/rajaongkir/**","/redis/**","/kafka/**","/async/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
